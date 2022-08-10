@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        'use strict';
+
+
+        function summa(a, b) {
+            return a + b;
+        }
+
+        function difference(a, b) {
+            return a - b;
+        }
+
+        function multiplication(a, b) {
+            return a * b;
+        }
+
+        function division(a, b) {
+            return a / b;
+        }
+
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case 'sum':
+                    return summa(arg1, arg2);
+                case 'dif':
+                    return difference(arg1, arg2);
+                case 'mult':
+                    return multiplication(arg1, arg2);
+                case 'div':
+                    return division(arg1, arg2);
+                default:
+                    alert('Не верное значение операции');
+                    break;
+
+            }
+        }
+
+        let arg1 = +prompt('Введите первое число');
+        let arg2 = +prompt('Введите второе число');
+        let operation = prompt('Введите желаемую операцию: sum для сложения, dif для вычитания, mult для умножения, div для деления');
+
+        let result = mathOperation(arg1, arg2, operation);
+        alert(result);
+
+
+
+    </script>
+
+</body>
+
+</html>

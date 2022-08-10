@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        'use strict';
+
+        //пример 1
+        // Объявление переменных, получаем a = 1, b = 1, c = undefined, d = undefined
+        let a = 1, b = 1, c, d;
+        // Инкрементируем a, получаем a = 2. Присваиваем c значение a, получаем c = 2
+        c = ++a;
+        alert(c); // ответ: 2
+
+        //пример 2
+        // Присваиваем d значение b, получаем d = 1. Инкрементируем b, получаем b = 2.
+        d = b++;
+        alert(d); //ответ: 1
+
+        //пример 3
+        // Инкрементируем a, получаем a = 3. Присваиваем c значение 2 + a, получаем c = 5
+        c = 2 + ++a;
+        alert(c); //ответ: 5
+
+        //пример 4
+        // Присваиваем d значение 2 + b, получаем d = 4. Инкрементируем b, получаем b = 3.
+        d = 2 + b++;
+        alert(d); //ответ: 4
+
+        alert(a); //3
+        alert(b); //3
+
+    </script>
+
+
+</body>
+
+</html>
