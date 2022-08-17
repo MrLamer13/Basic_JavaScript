@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01.1_es6</title>
+</head>
+
+<body>
+
+    <script>
+        'use strict';
+
+        function numberByDigits(value) {
+            const digits = {};
+
+            if (Number.isInteger(value) && value >= 0 && value < 1000) {
+                digits.units = value % 10;
+                digits.tens = Math.floor(value / 10) % 10;
+                digits.hundreds = Math.floor(value / 100);
+            } else {
+                console.log('Нужно число из диапазона [0, 999]!')
+            }
+
+            return digits;
+        }
+
+        let value = Number(prompt('Введите целое число из диапазона [1, 999].'));
+        console.log(numberByDigits(value));
+
+
+    </script>
+
+</body>
+
+</html>

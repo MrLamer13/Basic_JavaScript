@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01.1_es5</title>
+</head>
+
+<body>
+
+    <script>
+        'use strict';
+
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function (text) {
+            this.text = text;
+        };
+
+        const post01 = new Post('Вася', 'text', '17.08.2022');
+        console.log(post01);
+        post01.edit('другой текст');
+        console.log(post01);
+
+        function AttachedPost(author, text, date) {
+            Post.call(this, author, text, date);
+            this.highlighted = false;
+        }
+
+        AttachedPost.prototype = Object.create(Post.prototype);
+        AttachedPost.prototype.constructor = AttachedPost;
+
+        AttachedPost.prototype.makeTextHighlighted = function () {
+            this.highlighted = true;
+        }
+
+        const post02 = new AttachedPost('Петя', 'text', '17.08.2022');
+        console.log(post02);
+        post02.edit('другой текст');
+        console.log(post02);
+        post02.makeTextHighlighted();
+        console.log(post02);
+
+
+    </script>
+
+</body>
+
+</html>
